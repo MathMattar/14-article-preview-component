@@ -1,0 +1,75 @@
+.container {
+    display: flex;
+    position: relative;
+}
+
+.personIcon {
+    min-width: 40px;
+    height: 40px;
+    background-size: cover;
+    border-radius: 50%;
+}
+
+.personId {
+    width: 100%;
+    margin-left: 16px;
+}
+
+.personId h2 {
+    font-size: 13px;
+    font-weight: var(--bold);
+    line-height: 20px;
+    letter-spacing: 0.12px;
+    color: var(--very-dark-blue);
+    margin: unset;
+}
+
+.personId h3 {
+    font-size: 13px;
+    font-weight: var(--regular);
+    line-height: 20px;
+    letter-spacing: 0.12px;
+    color: var(--blue);
+    margin: unset;
+}
+
+.modal button {
+    min-width: 32px;
+    height: 32px;
+    border: none;
+    border-radius: 50%;
+    background-color: var(--light-blue);
+}
+
+.modal nav {
+    display: flex;
+    align-items: center;
+    background-color: var(--very-dark-blue);
+    position: absolute;
+    left: -32px;
+    bottom: -20px;
+    width: calc(100% + 64px);
+    height: 64px;
+    border-radius: 0 0 10px 10px;
+}
+
+.modal span {
+    font-size: 13px;
+    font-weight: var(--regular);
+    line-height: 20px;
+    letter-spacing: 5px;
+    color: var(--blue);
+    text-transform: uppercase;
+    margin-right: 21px;
+    margin-left: 32px;
+}
+
+.modal a img {
+    width: 20px;
+    margin-right: 16px;
+}
+
+.modal nav button {
+    background-color: var(--dark-blue);
+    margin-left: 40px;
+}

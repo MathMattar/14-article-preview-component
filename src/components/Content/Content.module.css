@@ -1,0 +1,8 @@
+.content p{
+    font-size: 13px;
+    font-weight: var(--regular);
+    line-height: 20px;
+    letter-spacing: 0.13px;
+    color: var(--dark-blue);
+    margin: 12px 0 32px;
+}
