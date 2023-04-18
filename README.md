@@ -1,70 +1,147 @@
-# Getting Started with Create React App
+# Article preview component
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Índice
 
-## Available Scripts
+- [Resumo](#resumo)
+  - [Screenshot](#screenshot)
+  - [Links](#links)
+- [Processo](#processo)
+  - [Construção](#construção)
+  - [Aprendizado](#aprendizado)
+  - [Recursos](#recursos)
+- [Autor](#autor)
 
-In the project directory, you can run:
+<br/>
 
-### `npm start`
+# Resumo
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Projeto ficticio representando um componente de visualização previo de artigo, contem uma imagem, título, conteúdo, autor, data e botão para compartilhamento. Este, quando clicado, exibi um pop-up com as opções de redes sóciais disponiveis para comparilhamento. Retirado de um desafio do site [FrontEnd Mentor](https://www.frontendmentor.io/challenges/article-preview-component-dYBN_pYFT).
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+Os usuários devem ser capazes de:
 
-### `npm test`
+- Ver o layout ideal para o componente dependendo do tamanho da tela de seu dispositivo;
+- Veja os links de compartilhamento de mídia social quando eles clicam no ícone de compartilhamento.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+<br/>
 
-### `npm run build`
+## Screenshot
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+<p style="text-align:center;">
+    <img width="1440px" src="./public/presentation/desktop.png" />
+</p>
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+<br/>
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+<p style="text-align:center;">
+    <img width="1440px" src="./public/presentation/desktop-active.png" />
+</p>
 
-### `npm run eject`
+<br/>
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## Links
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+- [Pré-visualização de comentário]()
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+<br/>
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+# Processo
 
-## Learn More
+<br/>
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## Construção
+- Mobile-first
+- React
+- CSS Module
 
-To learn React, check out the [React documentation](https://reactjs.org/).
 
-### Code Splitting
+<br/>
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+# Aprendizado
 
-### Analyzing the Bundle Size
+***Desenvolver lógica que possibilita a abertura do dropdown "pop-up" que disponibiliza as redes sociais para compartilhar.***
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+```javascript
+import React, { useState } from "react";
+import styles from "./Profile.module.css";
 
-### Making a Progressive Web App
+export default function Profile({ name, date }) {
+  const [dropdownOpen, setdropdownOpen] = useState(false);
+  const toggleDropdown = () => {
+    setdropdownOpen(!dropdownOpen);
+  };
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+  return (
+    <section className={styles.container}>
+      <div
+        className={styles.personIcon}
+        style={{ backgroundImage: `url('/images/avatar-michelle.jpg')` }}
+      ></div>
 
-### Advanced Configuration
+      <div className={styles.personId}>
+        <h2>{name}</h2>
+        <h3>{date}</h3>
+      </div>
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+      <div role="dialog" arial-aria-modal="true" className={styles.modal}>
+        <button onClick={toggleDropdown}>
+          <img src="/images/icon-share.svg" alt="Share icon" />
+        </button>
 
-### Deployment
+        {dropdownOpen && (
+          <nav>
+            <span>Share</span>
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+            <a href="#">
+              <img src="/images/icon-facebook.svg" alt="Icon Facebook" />
+            </a>
+            <a href="#">
+              <img src="/images/icon-twitter.svg" alt="Icon Twitter" />
+            </a>
+            <a href="#">
+              <img src="/images/icon-pinterest.svg" alt="Icon Pinterest" />
+            </a>
 
-### `npm run build` fails to minify
+            <button onClick={toggleDropdown}>
+              <svg xmlns="http://www.w3.org/2000/svg" width="15" height="13">
+                <path
+                  fill="#FFFFFF"
+                  d="M15 6.495L8.766.014V3.88H7.441C3.33 3.88 0 7.039 0 10.936v2.049l.589-.612C2.59 10.294 5.422 9.11 8.39 9.11h.375v3.867L15 6.495z"
+                />
+              </svg>
+            </button>
+          </nav>
+        )}
+      </div>
+    </section>
+  );
+}
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+```
+
+<br/>
+
+# Recursos
+
+- [Documentação do React](https://pt-br.reactjs.org/docs/getting-started.html)
+- [Documentação de Hooks](https://pt-br.reactjs.org/docs/hooks-intro.html)
+- [Documentação sobre Componentes](https://pt-br.reactjs.org/docs/components-and-props.html)
+- [Documentação sobre o uso de Estado (State)](https://pt-br.reactjs.org/docs/state-and-lifecycle.html)
+- [Documentação sobre Estilização de Componentes](https://pt-br.reactjs.org/docs/faq-styling.html)
+- [Documentação sobre Eventos](https://pt-br.reactjs.org/docs/handling-events.html)
+- [Documentação sobre Composição de Componentes](https://pt-br.reactjs.org/docs/composition-vs-inheritance.html)
+- [Documentação sobre Renderização Condicional](https://pt-br.reactjs.org/docs/conditional-rendering.html)
+
+<br/>
+
+# Autor
+
+<div align="center">
+
+<a href="https://www.linkedin.com/in/mathewsmattar/" target="_blank">
+  <img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/mathewsmattar/">
+</a>
+<a href="mailto:mathmattar@hotmail.com" target="_blank">
+  <img src="https://img.shields.io/badge/Microsoft_Outlook-0078D4?style=for-the-badge&logo=microsoft-outlook&logoColor=white">
+</a>
+
+</div>
