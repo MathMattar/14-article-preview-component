@@ -8,7 +8,6 @@ import Profile from "./components/Profile";
 
 export default function App() {
   return (
-    <>
       <Background>
         <Banner />
         <Card>
@@ -28,6 +27,5 @@ export default function App() {
           <Profile name="Michelle Appleton" date="28 Jun 2020" />
         </Card>
       </Background>
-    </>
   );
 }
