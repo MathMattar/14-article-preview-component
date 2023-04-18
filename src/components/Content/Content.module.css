@@ -1,8 +1,16 @@
-.content p{
+.content p {
     font-size: 13px;
     font-weight: var(--regular);
     line-height: 20px;
     letter-spacing: 0.13px;
     color: var(--dark-blue);
-    margin: 12px 0 32px;
+    margin: 1.8vh 0 4.8vh;
+}
+
+@media only screen and (min-width: 1400px) {
+
+    .content p {
+        margin: 1.5vh 0 2.5vh;
+    }
+
 }

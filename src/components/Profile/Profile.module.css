@@ -1,18 +1,23 @@
 .container {
     display: flex;
+    align-items: center;
     position: relative;
+    justify-items: end;
+    column-gap: 16px;
+    width: 100%;
 }
 
 .personIcon {
+    max-width: 40px;
     min-width: 40px;
-    height: 40px;
+    max-height: 40px;
+    min-height: 40px;
     background-size: cover;
     border-radius: 50%;
 }
 
 .personId {
     width: 100%;
-    margin-left: 16px;
 }
 
 .personId h2 {
@@ -34,8 +39,10 @@
 }
 
 .modal button {
+    max-width: 32px;
     min-width: 32px;
-    height: 32px;
+    max-height: 32px;
+    min-height: 32px;
     border: none;
     border-radius: 50%;
     background-color: var(--light-blue);
@@ -44,6 +51,7 @@
 .modal nav {
     display: flex;
     align-items: center;
+    column-gap: 16px;
     background-color: var(--very-dark-blue);
     position: absolute;
     left: -32px;
@@ -64,12 +72,59 @@
     margin-left: 32px;
 }
 
+.modal nav a {}
+
 .modal a img {
     width: 20px;
-    margin-right: 16px;
 }
 
 .modal nav button {
     background-color: var(--dark-blue);
     margin-left: 40px;
+}
+
+@media only screen and (min-width: 1400px) {
+
+    .modal {
+        position: relative;
+    }
+
+    .modal nav {
+        column-gap: 16px;
+        width: 248px;
+        min-height: 55px;
+        height: 55px;
+        top: -84px;
+        left: -120px;
+        bottom: 0;
+        padding: 18px 36px;
+        border-radius: 10px;
+
+    }
+
+    .modal nav:after {
+        content: "";
+        position: absolute;
+        width: 0;
+        height: 0;
+        border-style: solid;
+        border-width: 10px 12px;
+        border-color: hsl(217, 19%, 35%) transparent transparent transparent;
+        top: 100%;
+        left: 50%;
+    }
+
+    .modal span {
+        margin: 0 5px 0 0;
+    }
+
+    .modal a img {
+        margin: unset;
+    }
+
+    .modal nav button {
+        display: none;
+    }
+
+
 }

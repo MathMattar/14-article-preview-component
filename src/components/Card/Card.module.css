@@ -1,6 +1,18 @@
 .card {
     background-color: #FFFFFF;
-    padding: 36px 32px 20px;
+    padding: 5.4vh 8.5vw 3vh;
     border-radius: 0 0 10px 10px;
     box-shadow: 0 40px 40px -10px hsla(210, 29%, 84%, .5);
+}
+
+@media only screen and (min-width: 1400px) {
+
+    .card {
+        display: flex;
+        min-height: 35vh;
+        max-height: 100%;
+        padding: 4vh 2.78vw;
+        border-radius: 0 10px 10px 0;
+        flex-wrap: wrap;
+    }
 }

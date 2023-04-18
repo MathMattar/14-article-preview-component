@@ -7,3 +7,14 @@
     border-radius: 10px 10px 0 0;
 }
 
+@media only screen and (min-width: 1400px) {
+
+    .banner {
+        min-width: 19.80vw;
+        min-height: 35vh;
+        background-size: cover;
+        background-position: left;
+        border-radius: 10px 0 0 10px;
+    }
+
+}
