@@ -15,7 +15,7 @@
 
 # Resumo
 
-Projeto ficticio representando um componente de visualização previo de artigo, contem uma imagem, título, conteúdo, autor, data e botão para compartilhamento. Este, quando clicado, exibi um pop-up com as opções de redes sóciais disponiveis para comparilhamento. Retirado de um desafio do site [FrontEnd Mentor](https://www.frontendmentor.io/challenges/article-preview-component-dYBN_pYFT).
+Projeto fictício representando um componente de visualização prévio de artigo, contem uma imagem, título, conteúdo, autor, data e botão para compartilhamento. Este, quando clicado, exibi um pop-up com as opções de redes sociais disponíveis para compartilhamento.. Retirado de um desafio do site [FrontEnd Mentor](https://www.frontendmentor.io/challenges/article-preview-component-dYBN_pYFT).
 
 Os usuários devem ser capazes de:
 
